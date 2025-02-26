@@ -1,0 +1,14 @@
+---
+- name: Deploy to Tomcat
+  hosts: web
+  become: yes
+  tasks:
+    - name: Copy WAR file to Tomcat
+      copy:
+        src: "/var/lib/jenkins/workspace/MyMavenWebApp-CICD/target/MyMavenWebApp.war"
+        dest: "/opt/tomcat/webapps/MyMavenWebApp.war"
+
+    - name: Restart Tomcat
+      systemd:
+        name: tomcat
+        state: restarted
