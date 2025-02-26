@@ -21,6 +21,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                   mvn clean package
                 ansiblePlaybook playbook: 'ansible/deploy.yml', inventory: 'ansible/hosts.ini'
             }
         }
