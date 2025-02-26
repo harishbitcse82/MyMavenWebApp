@@ -7,6 +7,7 @@
       copy:
         src: "/var/snap/jenkins/workspace/MyMavenWebApp-CICD/target/MyMavenWebApp.war"
         dest: "/opt/tomcat/webapps/MyMavenWebApp.war"
+        remote_src: yes
 
     - name: Restart Tomcat
       systemd:
