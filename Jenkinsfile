@@ -23,7 +23,7 @@ pipeline {
             steps {
                   sh 'mvn clean package'
                // ansiblePlaybook playbook: 'ansible/deploy.yml', inventory: 'ansible/hosts.ini'
-            ansiblePlaybook playbook: 'ansible/deploy.yml', inventory: 'ansible/hosts.ini', extraVars: '', verbose: '-vvv'
+            ansiblePlaybook playbook: 'ansible/deploy.yml', inventory: 'ansible/hosts.ini', verbose: '-vvv'
             }
         }
     }
